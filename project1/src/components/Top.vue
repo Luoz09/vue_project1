@@ -7,16 +7,16 @@
            </ul>
        </div>
        <div class="rightContent">
-           <div class="content" v-for="(item,index) in showContent.lists" :key="index" 
+           <div class="content" v-for="(item,index) in showContent.lists" :key="index"
                                 style="height:calc(25% - 10px);padding:5px 0;" @click="showDetails(item)">
                 <div style="height: calc(100% - 40px)">
-                    <img :src="item.src" width="95%" height="100%">      
+                    <img :src="item.src" width="95%" height="100%">
                 </div>
                 <div style="line-height:20px;">{{ item.name }}</div>
                 <div style="line-height:20px;">
                     <del>{{ item.originPrice }}</del> &emsp;
                     {{ item.price }}
-                </div> 
+                </div>
            </div>
        </div>
    </div>
@@ -33,8 +33,10 @@ export default {
                     { src: "static/Images/list1.jpg" , id: "111", name: "图片1", originPrice: "120" , price:"100" },
                     { src: "static/Images/list1.jpg" , id: "111", name: "图片1", originPrice: "120" , price:"100" },
                     { src: "static/Images/list1.jpg" , id: "111", name: "图片1", originPrice: "120" , price:"100" },
+                    { src: "static/Images/list1.jpg" , id: "111", name: "图片1", originPrice: "120" , price:"100" },
                 ]},
                 {id: "2",lists: [
+                    { src: "static/Images/list2.jpg" , id: "222", name: "图片2", originPrice: "1200" , price:"1000" },
                     { src: "static/Images/list2.jpg" , id: "222", name: "图片2", originPrice: "1200" , price:"1000" },
                     { src: "static/Images/list2.jpg" , id: "222", name: "图片2", originPrice: "1200" , price:"1000" },
                     { src: "static/Images/list2.jpg" , id: "222", name: "图片2", originPrice: "1200" , price:"1000" },
@@ -45,8 +47,10 @@ export default {
                     { src: "static/Images/list3.jpg" , id: "333", name: "图片3", originPrice: "12" , price:"10" },
                     { src: "static/Images/list3.jpg" , id: "333", name: "图片3", originPrice: "12" , price:"10" },
                     { src: "static/Images/list3.jpg" , id: "333", name: "图片3", originPrice: "12" , price:"10" },
+                    { src: "static/Images/list3.jpg" , id: "333", name: "图片3", originPrice: "12" , price:"10" },
                 ]},
                  {id: "4",lists: [
+                    { src: "static/Images/list4.jpg" , id: "444", name: "图片4", originPrice: "140" , price:"90" },
                     { src: "static/Images/list4.jpg" , id: "444", name: "图片4", originPrice: "140" , price:"90" },
                     { src: "static/Images/list4.jpg" , id: "444", name: "图片4", originPrice: "140" , price:"90" },
                     { src: "static/Images/list4.jpg" , id: "444", name: "图片4", originPrice: "140" , price:"90" },
@@ -61,7 +65,13 @@ export default {
             this.curMenuIndex = index;
         },
         showDetails (item) {
-            this.$router.push("ContentDetails?id="+item.id)
+            /* this.$router.push("ContentDetails?id="+item.id) */
+            this.$router.push({
+                name: "ContentDetails",
+                query: {
+                    id: item.id
+                }
+            })
          }
     },
     computed: {
@@ -96,6 +106,7 @@ li {
    position: relative;
    top: 1%;
    left: 28.5%;
+   overflow-y: auto;
 }
 
 .on {

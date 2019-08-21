@@ -10,12 +10,15 @@
            购买数量：
            <input type="number"  v-model="num" />
            <div style="margin-top:20px;"> 总价：{{ countMoney }} </div>
-        </div> 
-        <button class="btn" @click="addGoodsInCar()">加入购物车</button> 
-
-          <i class="fa fa-car shoppingCar"  @click="shopCar()">
-                 <div class="details_goodsCount"> {{ goodsCount }} </div>
-            </i>    
+        </div>
+        <div class="btnBox">
+            <button class="btn" @click="addGoodsInCar()">加入购物车</button>
+            <button class="btn" @click="returnHistory()">返回</button>
+        </div>
+        
+        <i class="fa fa-shopping-cart shoppingCar"  @click="shopCar()">
+            <div class="details_goodsCount"> {{ goodsCount }} </div>
+        </i>    
     </div>
 </template>
 
@@ -49,6 +52,9 @@ export default {
             this.$router.push({
                 name: "ShopCar"
             })
+        },
+        returnHistory () {
+            this.$router.go(-1)
         }
     },
     mounted () { 
@@ -69,17 +75,20 @@ export default {
 </script>
 
 <style>
+.btnBox {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+}
 .btn {
     background: rgb(247, 203, 138);
     width: 30%;
     border: none;
     line-height: 40px;
-    position: absolute;
-    bottom: 20px;
-    left: 35%;
+    margin: 0 10px;
 }
 .shoppingCar {
-    font-size:2em;
+    font-size:2.5em;
     line-height:40px;
     position:absolute;
     left: 80%;
@@ -90,7 +99,7 @@ export default {
     position: relative;
     color:white;
     top: -45px;
-    left: 15px;
+    left: 20px;
     font-size: 18px!important;
     background: red;
     border-radius: 50%;

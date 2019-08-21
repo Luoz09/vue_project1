@@ -3,7 +3,7 @@
         <span style="text-algin:center;">shopping</span>
         <div class="RightIcon">
           <!--   <i class="fa fa-user" style="font-size:1.5em;line-height:40px;margin-right:20px;"></i> -->
-            <i class="fa fa-car"  style="font-size:1.5em;line-height:40px;" @click="shopCar()"></i>
+            <i class="fa fa-shopping-cart"  style="font-size:2em;line-height:40px;" @click="shopCar()"></i>
             <div class="goodsCount"> {{ goodsCount }} </div>
         </div>
     </div>
@@ -46,7 +46,7 @@ export default {
 .goodsCount {
     z-index: 99;
     position: absolute;
-    right: 0;
+    right: -3px;
     top: 2px;
     color:white;
     background: red;

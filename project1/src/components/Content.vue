@@ -1,6 +1,6 @@
 <template>
    <div>
-       <div class="content" v-for="(item,index) in lists" :key="index" @click="showDetails(item)">
+       <div class="main" v-for="(item,index) in lists" :key="index" @click="showDetails(item)">
            <img :src="item.src" height="100" width="100%" >
            <span style="line-height:30px;"> 
                <del> {{ item.originPrice }} </del>  &emsp;   
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style>
-.content {
+.main {
     width: 46%;
     height: 130px;
     padding: 2%; 

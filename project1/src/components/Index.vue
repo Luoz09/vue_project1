@@ -18,10 +18,6 @@ export default {
 </script>
 
 <style> 
-
-.contents {
-    margin-top: 20px;
-}
 .footer {
     position: absolute;
     bottom: 0px;

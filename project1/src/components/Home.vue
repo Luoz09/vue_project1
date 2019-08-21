@@ -1,8 +1,8 @@
 <template>
-   <div>
+   <div style="height:calc(100% - 40px)">
          <Header />
          <Banner />
-         <Content class="contents"/> 
+         <Content class="contents"/>
    </div>
 </template>
 
@@ -15,10 +15,15 @@ export default {
         Header,
         Banner,
         Content
-    } 
+    }
 }
 </script>
 
 <style>
+.contents {
+    margin-top: 20px;
+    height: calc(100% - 200px);
+    overflow-y: auto;
+}
 
 </style>

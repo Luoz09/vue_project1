@@ -33,12 +33,12 @@
                     </div>
                 </div>
             </div>
-            <div class="count">
-                全选：<input type="checkbox" v-model="isChooseAll" @click="chooseAll()"  class="chooseAll">
-                结算总价 ： {{ countGoodsMoney }}
-                <button class="count_btn" @click="countGoodsInfo()"> 结算 </button> 
-            </div>
        </div>
+       <div class="count" v-show="goodsList.length">
+            全选：<input type="checkbox" v-model="isChooseAll" @click="chooseAll()"  class="chooseAll">
+            结算总价 ： {{ countGoodsMoney }}
+            <button class="count_btn" @click="countGoodsInfo()"> 结算 </button> 
+        </div>
    </div>
 </template>
 
